@@ -1,24 +1,21 @@
 package src;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.StringTokenizer;
 
 public class P11003_findMin {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        PrintWriter pw = new PrintWriter(System.out);
-        String[] input = br.readLine().split(" ");
-        int N = Integer.parseInt(input[0]);
-        int window_size = Integer.parseInt(input[1]);
+        PrintWriter pw = new PrintWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int window_size = Integer.parseInt(st.nextToken());
+        st = new StringTokenizer(br.readLine());
         Deque<Node> minQueue = new LinkedList<>();
-
-        String[] values = br.readLine().split(" ");
         for (int i = 0; i < N; i++) {
-            int cur = Integer.parseInt(values[i]);
+            int cur = Integer.parseInt(st.nextToken());
             while (!minQueue.isEmpty() && minQueue.getLast().value > cur) minQueue.removeLast();
             minQueue.addLast(new Node(cur, i));
             if (minQueue.getFirst().index <= i - window_size) minQueue.removeFirst();

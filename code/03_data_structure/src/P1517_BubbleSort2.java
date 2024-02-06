@@ -8,7 +8,7 @@ public class P1517_BubbleSort2 {
     static int[] numbers;
     static long[] arr2;
 
-    public static void Main(String[] args) {
+    public static void P1517_BubbleSort2(String[] args) {
         Scanner scanner = new Scanner(System.in);
         n = scanner.nextInt();
         numbers = new int[n];
@@ -42,7 +42,7 @@ public class P1517_BubbleSort2 {
             }
         }
 
-        //Sum of all  the
+        //Sum of all the
         for (int k = start; k <= end; k++) {
             numbers[k] = (int) arr2[k - start];
         }
