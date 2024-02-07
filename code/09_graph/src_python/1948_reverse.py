@@ -10,6 +10,8 @@ for i in range(M):
     adjacent_graph[src-1].append((dst-1, cost))
 start, end = map(int, input().split())
 start, end = start-1, end-1
+
+
 def bfs_all_paths(adjacent_graph, start, end, N):
     queue = deque([(start, [start], 0)])  # Node, Path, Time
     all_paths = []
